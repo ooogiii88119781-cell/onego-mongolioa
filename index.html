@@ -12,13 +12,19 @@
 
 <style>
 
+* {
+
+  box-sizing: border-box;
+
+}
+
 body {
 
   margin: 0;
 
   font-family: Arial, sans-serif;
 
-  background: #f5f8ff;
+  background: #f4f7fb;
 
   color: #172554;
 
@@ -43,3 +49,163 @@ header {
   font-size: 28px;
 
   font-weight: bold;
+
+  color: #2563eb;
+
+}
+
+.hero {
+
+  background: linear-gradient(135deg, #1d4ed8, #60a5fa);
+
+  color: white;
+
+  text-align: center;
+
+  padding: 60px 20px;
+
+}
+
+.hero h1 {
+
+  font-size: 32px;
+
+}
+
+.search {
+
+  background: white;
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  width: 90%;
+
+  max-width: 500px;
+
+  border: none;
+
+  font-size: 16px;
+
+}
+
+h2 {
+
+  text-align: center;
+
+  margin-top: 35px;
+
+}
+
+.services {
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 15px;
+
+  padding: 20px;
+
+  max-width: 900px;
+
+  margin: auto;
+
+}
+
+.card {
+
+  background: white;
+
+  padding: 25px 10px;
+
+  text-align: center;
+
+  border-radius: 15px;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+
+  font-size: 18px;
+
+}
+
+.card a {
+
+  text-decoration: none;
+
+  color: #172554;
+
+}
+
+footer {
+
+  text-align: center;
+
+  padding: 30px;
+
+  color: #64748b;
+
+}
+
+@media (min-width: 700px) {
+
+  .services {
+
+    grid-template-columns: repeat(3, 1fr);
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">ONEGO</div>
+
+  <div>Монголын нэгдсэн үйлчилгээ</div>
+
+</header>
+
+<section class="hero">
+
+  <h1>Таны хэрэгцээт бүх үйлчилгээ нэг дор</h1>
+
+  <p>Хайж, захиалж, амьдралаа хялбарчил.</p>
+
+  <input class="search" placeholder="Ямар үйлчилгээ хайж байна вэ?">
+
+</section>
+
+<h2>Үйлчилгээний төрлүүд</h2>
+
+<section class="services">
+
+  <div class="card">🚚<br>Хүргэлт</div>
+
+  <div class="card">🧹<br>Цэвэрлэгээ</div>
+
+  <div class="card">🔧<br>Засвар</div>
+
+  <div class="card">🏗️<br>Барилга</div>
+
+  <div class="card">🚗<br>Тээвэр</div>
+
+  <div class="card">💇<br>Гоо сайхан</div>
+
+</section>
+
+<footer>
+
+  ONEGO Mongolia © 2026
+
+</footer>
+
+</body>
+
+</html>

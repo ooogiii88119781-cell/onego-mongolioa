@@ -186,7 +186,23 @@ function addCart(){
 
 function joinGroup(i){
 
- alert(items[i].name+" — групп захиалгын demo. Захиалгын системийг дараа холбож болно.");
+ const p=items[i];
+
+ const name=prompt("Таны нэр:");
+
+ if(!name)return;
+
+ const phone=prompt("Утасны дугаар:");
+
+ if(!phone)return;
+
+ alert("Захиалга амжилттай!\nБараа: "+p.name+
+
+ "\nГрупп үнэ: "+p.group.toLocaleString()+"₮"+
+
+ "\nНэр: "+name+"\nУтас: "+phone+
+
+ "\nONEGO удахгүй тантай холбогдоно.");
 
 }
 

@@ -196,17 +196,29 @@ function showProducts(list) {
 
       <div class="card">
 
-        <div class="photo">
+       <div class="photo">
 
-          ${p.image_url
+  ${
 
-            ? `<img src="${p.image_url}" alt="${p.name}"
+    p.image_url && p.image_url.startsWith("https://")
 
-              style="width:100%;height:180px;object-fit:contain;">`
+      ? `<img
 
-            : "🛍️"}
+          src="${p.image_url}"
 
-        </div>
+          alt="${p.name || 'ONEGO бараа'}"
+
+          style="width:100%;height:180px;object-fit:contain;"
+
+          onerror="this.style.display='none';this.parentElement.innerHTML='🛍️';"
+
+        >`
+
+      : "🛍️"
+
+  }
+
+</div>
 
         <h4>${p.name || ""}</h4>
 

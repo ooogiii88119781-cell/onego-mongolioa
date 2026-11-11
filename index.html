@@ -190,59 +190,47 @@ async function loadProducts() {
 
 function showProducts(list) {
 
-  document.getElementById("products").innerHTML =
+  const area = document.getElementById("products");
 
-    list.map((p, i) => `
+  area.innerHTML = list.map((p, i) => `
 
-      <div class="card">
+    <div class="card">
 
-       <div class="photo">
+      <div class="photo">
 
-  ${
+        <img
 
-    p.image_url && p.image_url.startsWith("https://")
+          src="${(p.image_url || '').trim()}"
 
-      ? `<img
+          alt="${p.name || 'ONEGO'}"
 
-          src="${p.image_url}"
+          style="width:100%;height:130px;object-fit:contain;"
 
-          alt="${p.name || 'ONEGO бараа'}"
+          onerror="this.outerHTML='<span>🛍️</span>'"
 
-          style="width:100%;height:180px;object-fit:contain;"
-
-          onerror="this.style.display='none';this.parentElement.innerHTML='🛍️';"
-
-        >`
-
-      : "🛍️"
-
-  }
-
-</div>
-
-        <h4>${p.name || ""}</h4>
-
-        <div class="price">
-
-          ${Number(p.price || 0).toLocaleString()}₮
-
-        </div>
-
-        <div class="group">
-
-          ${p.category || ""}
-
-        </div>
-
-        <p>${p.description || ""}</p>
-
-        <button onclick="addCart()">Сагсанд нэмэх</button>
-
-        <button onclick="joinGroup(${i})">Захиалах</button>
+        >
 
       </div>
 
-    `).join("");
+      <h4>${p.name || ''}</h4>
+
+      <div class="price">
+
+        ${Number(p.price || 0).toLocaleString()}₮
+
+      </div>
+
+      <div class="group">${p.category || ''}</div>
+
+      <p>${p.description || ''}</p>
+
+      <button onclick="addCart()">Сагсанд нэмэх</button>
+
+      <button onclick="joinGroup(${i})">Захиалах</button>
+
+    </div>
+
+  `).join("");
 
 }
 
